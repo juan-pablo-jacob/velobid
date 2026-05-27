@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/services/Auctions/VeloBid.Services.Auctions.Domain/VeloBid.Services.Auctions.Domain.csproj" />
+  <Project Path="src/VeloBid.AppHost/VeloBid.AppHost.csproj" />
+  <Project Path="tests/Auctions/VeloBid.Services.Auctions.Domain.UnitTests/VeloBid.Services.Auctions.Domain.UnitTests.csproj" />
+</Solution>
