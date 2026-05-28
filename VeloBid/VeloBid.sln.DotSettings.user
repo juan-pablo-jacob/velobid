@@ -1,7 +1,0 @@
-﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=10221a9a_002De0b1_002D4c26_002D8baa_002Dfa76ebb9bc3a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from AuctionTests.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Or&gt;
-    &lt;Project Location="/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/tests/Auctions/VeloBid.Services.Auctions.Domain.UnitTests" Presentation="&amp;lt;VeloBid.Services.Auctions.Domain.UnitTests&amp;gt;" /&gt;
-    &lt;Project Location="/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/tests/Auctions/VeloBid.Services.Auctions.Application.UnitTests" Presentation="&amp;lt;VeloBid.Services.Auctions.Application.UnitTests&amp;gt;" /&gt;
-  &lt;/Or&gt;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
