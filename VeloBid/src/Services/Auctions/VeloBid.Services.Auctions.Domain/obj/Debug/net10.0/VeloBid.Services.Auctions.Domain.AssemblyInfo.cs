@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VeloBid.Services.Auctions.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f0c81e96d98c2ebbc0c463c204a7479bf1a462e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+633a1b90ffc709d7b574309f2de32e797e449873")]
 [assembly: System.Reflection.AssemblyProductAttribute("VeloBid.Services.Auctions.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VeloBid.Services.Auctions.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
