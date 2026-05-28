@@ -1,4 +1,4 @@
-namespace VeloBid.Services.Auctions.Application.Common;
+namespace VeloBid.Services.Auctions.Application.Common.Results;
 
 public sealed record Error(string Code, string Message)
 {

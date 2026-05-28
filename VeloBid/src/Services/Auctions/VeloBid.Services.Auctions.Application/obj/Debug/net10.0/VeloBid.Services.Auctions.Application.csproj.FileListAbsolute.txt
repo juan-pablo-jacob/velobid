@@ -1,0 +1,16 @@
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/bin/Debug/net10.0/VeloBid.Services.Auctions.Application.deps.json
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/bin/Debug/net10.0/VeloBid.Services.Auctions.Application.dll
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/bin/Debug/net10.0/VeloBid.Services.Auctions.Application.pdb
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/bin/Debug/net10.0/VeloBid.Services.Auctions.Domain.dll
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/bin/Debug/net10.0/VeloBid.Services.Auctions.Domain.pdb
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/obj/Debug/net10.0/VeloBid.Services.Auctions.Application.csproj.AssemblyReference.cache
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/obj/Debug/net10.0/VeloBid.Services.Auctions.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/obj/Debug/net10.0/VeloBid.Services.Auctions.Application.AssemblyInfoInputs.cache
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/obj/Debug/net10.0/VeloBid.Services.Auctions.Application.AssemblyInfo.cs
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/obj/Debug/net10.0/VeloBid.Services.Auctions.Application.csproj.CoreCompileInputs.cache
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/obj/Debug/net10.0/VeloBid.Services.Auctions.Application.sourcelink.json
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/obj/Debug/net10.0/VeloBid..70FEC2E2.Up2Date
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/obj/Debug/net10.0/VeloBid.Services.Auctions.Application.dll
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/obj/Debug/net10.0/refint/VeloBid.Services.Auctions.Application.dll
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/obj/Debug/net10.0/VeloBid.Services.Auctions.Application.pdb
+/Users/juanpablojacob/Documents/POCs/velobid/VeloBid/src/Services/Auctions/VeloBid.Services.Auctions.Application/obj/Debug/net10.0/ref/VeloBid.Services.Auctions.Application.dll

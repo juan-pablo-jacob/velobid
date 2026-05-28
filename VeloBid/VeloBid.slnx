@@ -2,5 +2,6 @@
   <Project Path="src/Services/Auctions/VeloBid.Services.Auctions.Application/VeloBid.Services.Auctions.Application.csproj" />
   <Project Path="src/services/Auctions/VeloBid.Services.Auctions.Domain/VeloBid.Services.Auctions.Domain.csproj" />
   <Project Path="src/VeloBid.AppHost/VeloBid.AppHost.csproj" />
+  <Project Path="tests/Auctions/VeloBid.Services.Auctions.Application.UnitTests/VeloBid.Services.Auctions.Application.UnitTests.csproj" />
   <Project Path="tests/Auctions/VeloBid.Services.Auctions.Domain.UnitTests/VeloBid.Services.Auctions.Domain.UnitTests.csproj" />
 </Solution>

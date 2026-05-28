@@ -2,7 +2,7 @@ using MediatR;
 using VeloBid.Services.Auctions.Application.Abstractions.Clock;
 using VeloBid.Services.Auctions.Application.Abstractions.Data;
 using VeloBid.Services.Auctions.Application.Abstractions.Persistence;
-using VeloBid.Services.Auctions.Application.Common;
+using VeloBid.Services.Auctions.Application.Common.Results;
 using VeloBid.Services.Auctions.Domain.ValueObjects;
 
 namespace VeloBid.Services.Auctions.Application.Auctions.CloseAuction;

@@ -5,7 +5,6 @@ using VeloBid.Services.Auctions.Application.Behaviors;
 
 namespace VeloBid.Services.Auctions.Application;
 
-
 public static class DependencyInjection
 {
     public static IServiceCollection AddAuctionsApplication(this IServiceCollection services)
