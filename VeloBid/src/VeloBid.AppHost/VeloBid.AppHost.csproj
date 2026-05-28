@@ -8,4 +8,8 @@
         <UserSecretsId>4c85ee28-6c7f-4273-900d-d7829dd0f620</UserSecretsId>
     </PropertyGroup>
 
+    <ItemGroup>
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="13.3.5" />
+    </ItemGroup>
+
 </Project>
