@@ -4,6 +4,11 @@ namespace VeloBid.Services.Auctions.Domain.ValueObjects;
 
 public sealed record Money
 {
+    private Money()
+    {
+        Currency = string.Empty;
+    }
+
     private Money(decimal amount, string currency)
     {
         Amount = amount;
