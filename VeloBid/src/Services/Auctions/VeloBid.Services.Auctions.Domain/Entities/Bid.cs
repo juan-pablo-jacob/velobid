@@ -5,6 +5,14 @@ namespace VeloBid.Services.Auctions.Domain.Entities;
 
 public sealed class Bid : Entity<BidId>
 {
+    private Bid()
+        : base(default!)
+    {
+        AuctionId = default;
+        BidderId = default;
+        Amount = null!;
+    }
+
     private Bid(
         BidId id,
         AuctionId auctionId,

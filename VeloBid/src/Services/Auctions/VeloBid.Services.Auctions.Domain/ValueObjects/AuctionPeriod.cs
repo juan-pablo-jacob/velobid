@@ -4,10 +4,14 @@ namespace VeloBid.Services.Auctions.Domain.ValueObjects;
 
 public sealed record AuctionPeriod
 {
-    private static readonly TimeSpan MinimumDuration = TimeSpan.FromHours(1);
-    private static readonly TimeSpan MaximumDuration = TimeSpan.FromDays(7);
-    private static readonly TimeSpan AntiSnipingThreshold = TimeSpan.FromMinutes(2);
-    private static readonly TimeSpan AntiSnipingExtension = TimeSpan.FromMinutes(2);
+    public static readonly TimeSpan MinimumDuration = TimeSpan.FromHours(1);
+    public static readonly TimeSpan MaximumDuration = TimeSpan.FromDays(7);
+    public static readonly TimeSpan AntiSnipingThreshold = TimeSpan.FromMinutes(2);
+    public static readonly TimeSpan AntiSnipingExtension = TimeSpan.FromMinutes(2);
+
+    private AuctionPeriod()
+    {
+    }
 
     private AuctionPeriod(DateTimeOffset startsAtUtc, DateTimeOffset endsAtUtc)
     {

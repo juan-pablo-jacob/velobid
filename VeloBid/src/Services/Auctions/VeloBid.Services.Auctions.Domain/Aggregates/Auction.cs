@@ -11,6 +11,17 @@ public sealed class Auction : AggregateRoot<AuctionId>
 {
     private readonly List<Bid> _bids = [];
 
+    private Auction()
+        : base(default!)
+    {
+        SellerId = default;
+        Title = string.Empty;
+        Description = string.Empty;
+        StartingPrice = null!;
+        MinimumBidIncrement = null!;
+        Period = null!;
+    }
+
     private Auction(
         AuctionId id,
         UserId sellerId,
