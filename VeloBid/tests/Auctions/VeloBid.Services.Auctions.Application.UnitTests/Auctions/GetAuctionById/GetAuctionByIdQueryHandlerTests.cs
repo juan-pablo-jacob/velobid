@@ -33,19 +33,21 @@ public sealed class GetAuctionByIdQueryHandlerTests
         var auctionId = Guid.NewGuid();
         var sellerId = Guid.NewGuid();
 
-        var auction = new AuctionDetailsDto(
-            auctionId,
-            sellerId,
-            "Carbon road bike",
-            "A lightweight carbon road bike.",
-            AuctionStatus.Active,
-            1_000m,
-            1_250m,
-            "EUR",
-            DateTimeOffset.UtcNow.AddHours(-1),
-            DateTimeOffset.UtcNow.AddHours(2),
-            null,
-            null);
+        var auction = new AuctionDetailsDto
+        {
+            Id = auctionId,
+            SellerId = sellerId,
+            Title = "Carbon road bike",
+            Description = "A lightweight carbon road bike.",
+            Status = AuctionStatus.Active,
+            StartingPrice = 1_000m,
+            CurrentPrice = 1_250m,
+            Currency = "EUR",
+            StartsAtUtc = DateTime.UtcNow.AddHours(-1),
+            EndsAtUtc = DateTime.UtcNow.AddHours(2),
+            WinnerId = null,
+            WinningAmount = null
+        };
 
         readRepository.Seed(auction);
 

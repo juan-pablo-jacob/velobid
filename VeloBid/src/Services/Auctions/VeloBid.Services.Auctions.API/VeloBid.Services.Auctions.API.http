@@ -1,0 +1,189 @@
+@API_HostAddress = http://localhost:5065
+
+@sellerId = 11111111-1111-1111-1111-111111111111
+@bidderId = 22222222-2222-2222-2222-222222222222
+@secondBidderId = 33333333-3333-3333-3333-333333333333
+
+### Health check
+GET {{API_HostAddress}}/health
+
+### Liveness check
+GET {{API_HostAddress}}/alive
+
+### OpenAPI document
+GET {{API_HostAddress}}/openapi/v1.json
+
+### Create scheduled auction
+# @name createScheduledAuction
+POST {{API_HostAddress}}/api/auctions
+Content-Type: application/json
+
+{
+  "sellerId": "{{sellerId}}", 
+  "title": "Carbon road bike",
+  "description": "A lightweight carbon road bike in excellent condition.",
+  "startingPrice": 1000,
+  "minimumBidIncrement": 10,
+  "currency": "EUR",
+  "startsAtUtc": "2026-06-03T12:00:00Z",
+  "endsAtUtc": "2026-06-09T15:00:00Z"
+}
+
+### Get auction by id
+@auctionId = eef62861-ceac-425e-817e-85c41dc8c6fd
+
+GET {{API_HostAddress}}/api/auctions/{{auctionId}}
+
+### Active Auction Mnaully
+POST {{API_HostAddress}}/api/auctions/{{auctionId}}/activate
+
+### Get active auctions
+GET {{API_HostAddress}}/api/auctions/active
+
+### Try placing bid on scheduled auction - should return conflict
+POST {{API_HostAddress}}/api/auctions/{{auctionId}}/bids
+Content-Type: application/json
+
+{
+  "bidderId": "{{bidderId}}",
+  "amount": 1010,
+  "currency": "EUR"
+}
+
+### Try closing scheduled auction before end date - should return conflict
+POST {{API_HostAddress}}/api/auctions/{{auctionId}}/close
+
+### Create auction starting now
+# This is useful if your domain creates Draft when StartsAtUtc <= now.
+# Depending on your current lifecycle rules, you may still need an ActivateAuction use case later.
+# @name createAuctionStartingNow
+POST {{API_HostAddress}}/api/auctions
+Content-Type: application/json
+
+{
+  "sellerId": "{{sellerId}}",
+  "title": "Gravel bike",
+  "description": "A reliable gravel bike ready for long rides.",
+  "startingPrice": 750,
+  "minimumBidIncrement": 10,
+  "currency": "EUR",
+  "startsAtUtc": "2026-01-01T12:00:00Z",
+  "endsAtUtc": "2026-01-01T15:00:00Z"
+}
+
+### Get second auction by id
+@secondAuctionId = {{createAuctionStartingNow.response.body.$.auctionId}}
+
+GET {{API_HostAddress}}/api/auctions/{{secondAuctionId}}
+
+### Place first bid
+# This will only succeed if the auction is Active.
+POST {{API_HostAddress}}/api/auctions/{{secondAuctionId}}/bids
+Content-Type: application/json
+
+{
+  "bidderId": "{{bidderId}}",
+  "amount": 750,
+  "currency": "EUR"
+}
+
+### Place second bid too low
+# highest bid = 750
+# minimum increment = 10
+# current rule requires strictly greater than 760
+POST {{API_HostAddress}}/api/auctions/{{secondAuctionId}}/bids
+Content-Type: application/json
+
+{
+  "bidderId": "{{secondBidderId}}",
+  "amount": 760,
+  "currency": "EUR"
+}
+
+### Place second valid bid
+POST {{API_HostAddress}}/api/auctions/{{secondAuctionId}}/bids
+Content-Type: application/json
+
+{
+  "bidderId": "{{secondBidderId}}",
+  "amount": 760.01,
+  "currency": "EUR"
+}
+
+### Seller tries to bid on own auction - should return validation error
+POST {{API_HostAddress}}/api/auctions/{{secondAuctionId}}/bids
+Content-Type: application/json
+
+{
+  "bidderId": "{{sellerId}}",
+  "amount": 800,
+  "currency": "EUR"
+}
+
+### Get auction after bids
+GET {{API_HostAddress}}/api/auctions/{{secondAuctionId}}
+
+### Close auction
+# This will only succeed if EndsAtUtc has already been reached according to the domain clock.
+POST {{API_HostAddress}}/api/auctions/{{secondAuctionId}}/close
+
+### Get auction after close
+GET {{API_HostAddress}}/api/auctions/{{secondAuctionId}}
+
+### Create invalid auction - starting price is zero
+POST {{API_HostAddress}}/api/auctions
+Content-Type: application/json
+
+{
+  "sellerId": "{{sellerId}}",
+  "title": "Invalid auction",
+  "description": "Starting price is invalid.",
+  "startingPrice": 0,
+  "minimumBidIncrement": 10,
+  "currency": "EUR",
+  "startsAtUtc": "2026-01-01T12:00:00Z",
+  "endsAtUtc": "2026-01-01T15:00:00Z"
+}
+
+### Create invalid auction - duration less than one hour
+POST {{API_HostAddress}}/api/auctions
+Content-Type: application/json
+
+{
+  "sellerId": "{{sellerId}}",
+  "title": "Invalid duration auction",
+  "description": "Auction duration is less than one hour.",
+  "startingPrice": 100,
+  "minimumBidIncrement": 5,
+  "currency": "EUR",
+  "startsAtUtc": "2026-01-01T12:00:00Z",
+  "endsAtUtc": "2026-01-01T12:30:00Z"
+}
+
+### Create invalid auction - duration greater than seven days
+POST {{API_HostAddress}}/api/auctions
+Content-Type: application/json
+
+{
+  "sellerId": "{{sellerId}}",
+  "title": "Invalid long auction",
+  "description": "Auction duration is greater than seven days.",
+  "startingPrice": 100,
+  "minimumBidIncrement": 5,
+  "currency": "EUR",
+  "startsAtUtc": "2026-01-01T12:00:00Z",
+  "endsAtUtc": "2026-01-09T12:00:01Z"
+}
+
+### Get non-existing auction - should return not found
+GET {{API_HostAddress}}/api/auctions/99999999-9999-9999-9999-999999999999
+
+### Place bid on non-existing auction - should return not found
+POST {{API_HostAddress}}/api/auctions/99999999-9999-9999-9999-999999999999/bids
+Content-Type: application/json
+
+{
+  "bidderId": "{{bidderId}}",
+  "amount": 1000,
+  "currency": "EUR"
+}

@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="src/Services/Auctions/VeloBid.Services.Auctions.API/VeloBid.Services.Auctions.API.csproj" />
   <Project Path="src/Services/Auctions/VeloBid.Services.Auctions.Application/VeloBid.Services.Auctions.Application.csproj" />
   <Project Path="src/services/Auctions/VeloBid.Services.Auctions.Domain/VeloBid.Services.Auctions.Domain.csproj" />
   <Project Path="src/Services/Auctions/VeloBid.Services.Auctions.Infrastructure/VeloBid.Services.Auctions.Infrastructure.csproj" />

@@ -2,11 +2,19 @@ using VeloBid.Services.Auctions.Domain.Enums;
 
 namespace VeloBid.Services.Auctions.Application.Auctions.GetActiveAuctions;
 
-public sealed record AuctionSummaryDto(
-    Guid Id,
-    string Title,
-    AuctionStatus Status,
-    decimal CurrentPrice,
-    string Currency,
-    DateTimeOffset EndsAtUtc,
-    int TotalBids);
+public sealed class AuctionSummaryDto
+{
+    public Guid Id { get; init; }
+
+    public string Title { get; init; } = string.Empty;
+
+    public AuctionStatus Status { get; init; }
+
+    public decimal CurrentPrice { get; init; }
+
+    public string Currency { get; init; } = string.Empty;
+
+    public DateTime EndsAtUtc { get; init; }
+
+    public int TotalBids { get; init; }
+}

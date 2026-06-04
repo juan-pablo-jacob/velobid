@@ -14,22 +14,26 @@ public sealed class GetActiveAuctionsQueryHandlerTests
 
         var activeAuctions = new List<AuctionSummaryDto>
         {
-            new(
-                Guid.NewGuid(),
-                "Carbon road bike",
-                AuctionStatus.Active,
-                1_000m,
-                "EUR",
-                DateTimeOffset.UtcNow.AddHours(2),
-                3),
-            new(
-                Guid.NewGuid(),
-                "Gravel bike",
-                AuctionStatus.Active,
-                750m,
-                "EUR",
-                DateTimeOffset.UtcNow.AddHours(4),
-                1)
+            new()
+            {
+                Id = Guid.NewGuid(),
+                Title = "Carbon road bike",
+                Status = AuctionStatus.Active,
+                CurrentPrice = 1_000m,
+                Currency = "EUR",
+                EndsAtUtc = DateTime.UtcNow.AddHours(2),
+                TotalBids = 3
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
+                Title = "Gravel bike",
+                Status = AuctionStatus.Active,
+                CurrentPrice = 750m,
+                Currency = "EUR",
+                EndsAtUtc = DateTime.UtcNow.AddHours(4),
+                TotalBids = 1
+            }
         };
 
         readRepository.SeedActiveAuctions(activeAuctions);
