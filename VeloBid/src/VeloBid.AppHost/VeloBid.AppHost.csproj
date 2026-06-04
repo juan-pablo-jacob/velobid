@@ -13,4 +13,8 @@
         <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="13.3.5" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Services\Auctions\VeloBid.Services.Auctions.API\VeloBid.Services.Auctions.API.csproj" />
+    </ItemGroup>
+
 </Project>
